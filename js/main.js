@@ -23,3 +23,18 @@ const clear_data = () => {
     document.querySelector(Dom_elements.raceCar_list).innerHTML = "";
 }
 
+const form = document.querySelector("#seasonRoundForm")
+
+form.addEventListener('submit', ( event ) => {
+    event.preventDefault();
+    let query_season = document.querySelector("#season")
+    let query_round = document.querySelector("#round")
+     
+    let season = event.path[0][0].value
+    let round = event.path[0][1].value
+
+    console.log(event)
+    console.log(season, round)
+    console.log(query_season)
+    console.log(`This came from the query selectors, Season: ${query_season.value}, Round: ${query_round.value}`)
+})
